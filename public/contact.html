@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="Assets/CSS/contact.css">
+
+    </head>
+    <body>
+        <header class="flexcontainer">
+            <h1>Contact Us</h1>
+            <nav id="navcontainer">
+                <div id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            <ul  class="flexcontainer hide" id="main-nav">
+                <li><a href="../mainPage/index.html">Home</a></li>
+                <li><a href="../aboutPage/index.html">About</a></li>
+                <li><a href="../contactPage/index.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        </header>
+        <main>
+            <div id="content">
+            <div class="form">
+                <h1>submit a Show or Movie to be featured!</h1>
+                <form id="form-movie">
+                    <p>
+                        <label for="movie">title</label>
+                        <input type="text" id="movie" name="movie" required>
+                    </p>
+                    <p>
+                        <label for="director">director/creator</label>
+                        <input type="text" id="director" name="director" required>
+                    </p>
+                    <p>
+                        <label for="Genre">Genre</label>
+                        <input type="text" id="Genre" name="Genre" required>
+                    </p>
+                    <p>
+                        <label for="year">Date incepted</label>
+                        <input type="date" id="year" name="year" required>
+                    </p>
+                    <button type="submit">Send</button>
+                </form>
+                <div id="movieFormFeedback"></div>
+             </div>
+             <div class="form">
+                <h1>Contact Us</h1>
+                <form id="contactform" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="cec64a6d-0cad-4f8d-b22c-ec171a27f36a">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+                <div id="formFeedback"></div> <!-- Placeholder for feedback messages -->
+            </div>
+
+            <!-- Responsive IFrame -->
+            <div class="responsive-iframe">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4V1la2abC68?si=wZZ9JWgCO-eZag--" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+        </div>
+        </main>
+        <footer class="flexcontainer">
+            <ul class="flexcontainer hide" id="bot-nav">
+                <li><a href="../musicPage/index.html">Music</a></li>
+                <li><a href="../moviesPage/index.html">Movies</a></li>
+                <li><a href="../tvPage/index.html">TV</a></li>
+                <li><a href="../artPage/index.html">Art & Fashion</a></li>
+                <li><a href="../gamesPage/index.html">Games</a></li>
+                <li><a href="../bonusPage/index.html">Bonus</a></li>
+            </ul>
+        </footer>
+    </body>
+    <script src="Assets/scripts/contact.js"></script>
+</html>

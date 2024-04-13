@@ -1,0 +1,120 @@
+/*structure*/
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: auto;
+    background-color: #F7EDD0;
+}
+header{
+    justify-content: space-between;
+    background-color: #947360;
+    padding: 4px;
+    border-bottom: 2px solid black;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#topleft, #botleft, #topright, #botright{
+    border: 1px solid black;
+}
+p{
+    padding: 12px;
+}
+h2{
+    padding: 6px;
+}
+footer{
+    margin: none;
+    max-height:fit-content;
+    border-top: 1px solid black;
+    justify-content: center;
+}
+
+#main-nav li{
+    list-style: none;
+    background-color: #F7EDD0;
+    border: 4px solid black;
+    margin: 4px;
+    padding: 6px;
+    border-radius: 4px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+footer{
+    margin: none;
+    max-height:fit-content;
+    border-top: 1px solid black;
+    justify-content: center;
+}
+#bot-nav{
+text-align: center;
+margin: auto;
+}
+#topleft{
+    background-color: rgb(231, 231, 231);
+    padding: 4px;
+}
+#botleft{
+    background-color: rgb(173, 173, 173);
+    padding: 4px;
+}
+#topright{
+    background-color: rgb(190, 190, 190);
+    padding: 4px;
+}
+#botright{
+    background-color: rgb(241, 241, 241);
+    padding: 4px;
+}
+#hamburger{
+    padding: 8px;
+}
+#hamburger div{
+    width: 20px;
+    height: 4px;
+    background-color: black;
+    margin: 6px;
+}
+
+.hide{
+    display: none;
+}
+
+/*typography*/
+#main-nav a{
+    text-decoration:none;
+    color: black;
+    font-weight: 500;
+}
+#bot-nav a{
+    text-decoration:none;
+    color: black;
+    font-weight: 500;
+}
+#bot-nav li{
+    list-style: none;
+    background-color: #F7EDD0;
+    border: 4px solid black;
+    margin: 4px;
+    padding: 6px;
+    border-radius: 4px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/*resolution / flex*/
+@media(min-width: 760px){
+    .flexcontainer{
+        display: flex;
+    
+    }
+    #hamburger{
+        display: none;
+    }
+}
+.col{
+    flex: 1;
+}
