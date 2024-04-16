@@ -1,0 +1,38 @@
+[
+
+    {
+        "title": "Good Will Hunting",
+        "Director": "Gus Van Sant",
+        "Genre":"Drama",
+        "Year": "1997",
+        "image": "images/Good_Will_Hunting.png"
+    },
+    {
+        "title": "Inception",
+        "Director": "Christopher Nolan",
+        "Genre":"Sci-Fi, Thriller, Action",
+        "Year": "2010",
+        "image": "images/Inception_(2010)_theatrical_poster.jpg"
+    },
+    {
+        "title": "Knives Out",
+        "Director": "Rian Johnsone",
+        "Genre":"Mystery, Thriller, Comedy",
+        "Year": "2019",
+        "image": "images/Knives_Out_poster.jpg"
+    },
+    {
+        "title": "Once Upon a Time in Hollywood",
+        "Director": "Quentin Tarantino",
+        "Genre":"Comedy, Drana",
+        "Year": "2019",
+        "image": "images/Once_Upon_a_Time_in_Hollywood_poster.png"
+    },
+    {
+        "title": "Surfs Up",
+        "Director": "Ash Brannon, Chris Buck",
+        "Genre":"Animation, Comedy",
+        "Year": "2007",
+        "image": "images/Surfs_upmp.jpg"
+    }
+]

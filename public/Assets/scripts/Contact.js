@@ -45,7 +45,7 @@ document.getElementById('contactform').addEventListener('submit', function(e) {
         formFeedback.textContent = '';
     }, 5000);
 });
-const submitMovieForm = (e) => {
+const submitMovieForm = async (e) => {
     e.preventDefault();
     
     const form = e.target;
@@ -54,14 +54,25 @@ const submitMovieForm = (e) => {
     const Genre = form.elements["Genre"].value;
     const year = form.elements["year"].value;
     console.log(MovieName + " by " + director + " of the genre " + Genre + "incepted in " + year);
+    const FormData = new FormData(form);
+    response = await fetch('/api/Art',{
+        method: 'POST',
+        body: FormData
+    })
+    if (!response.ok()){
         // Display feedback message
         const movieFormFeedback = document.getElementById('movieFormFeedback');
+        movieFormFeedback.textContent = "uh oh! There was a problem with your submission";
+        movieFormFeedback.style.color = 'red';
+    };
+
         movieFormFeedback.textContent = "Thank you! Your submission has been received.";
         movieFormFeedback.style.color = 'green';
         form.reset();
         setTimeout(() => {
             movieFormFeedback.textContent = '';
         }, 5000);
-    }
+
+    };
     
 document.getElementById("form-movie").onsubmit = submitMovieForm;

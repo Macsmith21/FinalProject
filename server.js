@@ -19,3 +19,30 @@ const storage = multer.diskStorage({
     },
 });
 const upload = multer({ storage: storage });
+
+mongoose
+  .connect("mongodb+srv://MacSmith:4PZSmC7dS12T8xMi@data.vpbjhop.mongodb.net/?retryWrites=true&w=majority&appName=data")
+  .then(() => console.log("Connected to mongodb..."))
+  .catch((err) => console.error("could not connect ot mongodb...", err));
+
+
+
+const ArtSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  artist: String,
+  year: Date
+})
+
+const Art = mongoose.model('Art', ArtSchema);
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+})
+
+
+
+
+app.listen(3000, () => {
+  console.log("serving port 3000");
+});

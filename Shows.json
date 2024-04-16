@@ -1,0 +1,38 @@
+[
+
+    {
+        "title": "One Piece",
+        "Creator": "Echiro Oda",
+        "Genre":"Anime, Fantasy",
+        "Year": "1999-present",
+        "image": "images/One_Piece,_Volume_61_Cover_(Japanese).jpg"
+    },
+    {
+        "title": "How I Met Your Mother",
+        "Creator": "Carter Bays, Craig Thomas",
+        "Genre":"Sci-Fi, Thriller, Action",
+        "Year": "2005-2014",
+        "image": "images/Howimetyourmother.jpg"
+    },
+    {
+        "title": "Game Of Thrones",
+        "Creator": "George RR Martin",
+        "Genre":"Fantasy, Drama",
+        "Year": "2011-2019",
+        "image": "images/Game_of_Thrones_title_card.jpg"
+    },
+    {
+        "title": "Jujutsu Kaisen",
+        "Creator": "Gege Akatumi",
+        "Genre":"Fantasy, Adventure, Supernatural",
+        "Year": "2020-present",
+        "image": "images/Jujutsu_kaisen.jpg"
+    },
+    {
+        "title": "That 70's Show",
+        "Creator": "Bonnie and Terry Turner",
+        "Genre":"Sitcom",
+        "Year": "1998-2006",
+        "image": "images/That_'70s_Show_logo.png"
+    }
+]
