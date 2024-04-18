@@ -58,8 +58,9 @@ const submitMovieForm = async (e) => {
       response = await fetch("/api/Art", {
         method: "POST",
         body: formData,
-      });
-    
+      });}
+
+    await response.json();  
     if (!response.ok()){
         // Display feedback message
         const movieFormFeedback = document.getElementById('movieFormFeedback');
@@ -73,7 +74,8 @@ const submitMovieForm = async (e) => {
         setTimeout(() => {
             movieFormFeedback.textContent = '';
         }, 5000);
+        
 
-    };}
+    };
     
 document.getElementById("form-movie").onsubmit = submitMovieForm;
