@@ -25,7 +25,7 @@
             <div id="content">
             <div class="form">
                 <h1>submit a piece of culture to be featured!</h1>
-                <form id="form-movie">
+                <form id="form-movie" action="/api/Art" method="post">
                     <p>
                         <label for="movie">Title</label>
                         <input type="text" id="movie" name="Title" required>
@@ -41,6 +41,10 @@
                     <p>
                         <label for="year">Date incepted</label>
                         <input type="date" id="year" name="year" required>
+                    </p>
+                    <p>
+                        <label for="img">Upload Image:</label>
+                        <input type="file" id="img" name="img" accept="image/*" />
                     </p>
                     <button type="submit">Send</button>
                 </form>

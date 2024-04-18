@@ -47,18 +47,19 @@ document.getElementById('contactform').addEventListener('submit', function(e) {
 });
 const submitMovieForm = async (e) => {
     e.preventDefault();
+    const form = document.getElementById("form-movie");
+    const formData = new FormData(form);
+    let response;
+    console.log(...formData);
+  
+    //add request
+    if (form._id.value.trim() == "") {
+      console.log("in post");
+      response = await fetch("/api/Art", {
+        method: "POST",
+        body: formData,
+      });
     
-    const form = e.target;
-    const MovieName = form.elements["movie"].value;
-    const director = form.elements["director"].value;
-    const Genre = form.elements["Genre"].value;
-    const year = form.elements["year"].value;
-    console.log(MovieName + " by " + director + " of the genre " + Genre + "incepted in " + year);
-    const FormData = new FormData(form);
-    response = await fetch('/api/Art',{
-        method: 'POST',
-        body: FormData
-    })
     if (!response.ok()){
         // Display feedback message
         const movieFormFeedback = document.getElementById('movieFormFeedback');
@@ -73,6 +74,6 @@ const submitMovieForm = async (e) => {
             movieFormFeedback.textContent = '';
         }, 5000);
 
-    };
+    };}
     
 document.getElementById("form-movie").onsubmit = submitMovieForm;

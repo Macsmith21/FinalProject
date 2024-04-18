@@ -28,6 +28,7 @@ mongoose
 
 
 const ArtSchema = new mongoose.Schema({
+  img: String,
   title: String,
   description: String,
   artist: String,
@@ -40,7 +41,14 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 })
 
-
+app.post("/api/Art", upload.single("image"), (req, res) => {
+  //const { title, description, artist, year } = req.body;
+  //const image = req.file.originalname;
+  //const newArt = new Art({ title, description, artist, year, image });
+  //newArt.save();
+  //res.send("Art has been added");
+  console.log(req.body);
+})
 
 
 app.listen(3000, () => {
