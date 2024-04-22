@@ -45,37 +45,38 @@ document.getElementById('contactform').addEventListener('submit', function(e) {
         formFeedback.textContent = '';
     }, 5000);
 });
-const submitMovieForm = async (e) => {
+document.getElementById('form-movie').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = document.getElementById("form-movie");
+    const form = e.target;
     const formData = new FormData(form);
-    let response;
-    console.log(...formData);
-  
-    //add request
-    if (form._id.value.trim() == "") {
-      console.log("in post");
-      response = await fetch("/api/Art", {
-        method: "POST",
-        body: formData,
-      });}
 
-    await response.json();  
-    if (!response.ok()){
-        // Display feedback message
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData, // formData will be sent correctly without setting 'Content-Type'
+            // 'headers' is not set because the browser will automatically set the multipart boundary
+        });
+
+        const data = await response.json();
+
         const movieFormFeedback = document.getElementById('movieFormFeedback');
-        movieFormFeedback.textContent = "uh oh! There was a problem with your submission";
+        if (response.ok) {
+            movieFormFeedback.textContent = "Thank you! Your submission has been received.";
+            movieFormFeedback.style.color = 'green';
+        } else {
+            movieFormFeedback.textContent = data.errors.join(", ");
+            movieFormFeedback.style.color = 'red';
+        }
+    } catch (error) {
+        console.error('Submission error:', error);
+        movieFormFeedback.textContent = "An error occurred. Please try again later.";
         movieFormFeedback.style.color = 'red';
-    };
+    }
 
-        movieFormFeedback.textContent = "Thank you! Your submission has been received.";
-        movieFormFeedback.style.color = 'green';
-        form.reset();
-        setTimeout(() => {
-            movieFormFeedback.textContent = '';
-        }, 5000);
-        
+    setTimeout(() => {
+        movieFormFeedback.textContent = '';
+    }, 5000);
+});
 
-    };
     
 document.getElementById("form-movie").onsubmit = submitMovieForm;

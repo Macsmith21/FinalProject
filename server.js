@@ -12,7 +12,7 @@ app.use(express.json());
 //create multer storage and file filter function
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./public/Assets/images/");
+      cb(null, "./uploads/Assets/images/");
     },
     filename: (req, file, cb) => {
       cb(null, file.originalname);
@@ -34,8 +34,8 @@ mongoose
 const ArtSchema = new mongoose.Schema({
   img: String,
   title: String,
-  description: String,
-  artist: String,
+  genre: String,
+  creator: String,
   year: Date
 })
 
@@ -63,9 +63,10 @@ app.post("/api/Art", upload.single("img"), (req, res) => {
 
     const art = new Art({
       title: req.body.title,
-      description: req.body.description,
-      artist: req.body.artist,
-      year: req.body.year
+      genre: req.body.genre,
+      creator: req.body.creator,
+      year: req.body.year,
+      img: req.file.filename
     });
 
     if (req.file) {
@@ -109,8 +110,8 @@ const createArt = async (res, art) => {
 const updateArt = async (req,res) => {
       let updatefields ={
         title: req.body.title,
-        description: req.body.description,
-        artist: req.body.artist,
+        genre: req.body.genre,
+        creator: req.body.creator,
         year: req.body.year
       };
       if(req.file) {
@@ -129,9 +130,9 @@ const removeArt = async (res, id) => {
 const validateArt = (art) => {
   const schema = Joi.object({
     _id: Joi.allow(""),
-    artist: Joi.allow(""),
+    creator: Joi.allow(""),
     title: Joi.string().min(3).required(),
-    description: Joi.string().min(4).required(),
+    genre: Joi.string().min(2).required(),
     year: Joi.date().required(),
   });
   const result = schema.validate(art);
